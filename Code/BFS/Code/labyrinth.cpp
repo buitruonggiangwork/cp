@@ -93,19 +93,6 @@ void trace(Point e) {
 void solve() {
 	input();
 	bfs();
-	// for(int i = 0; i < n; ++i) {
-	// 	for(int j = 0; j < m; ++j) {
-	// 		cout<<dis[i][j]<<" ";
-	// 	}
-	// 	cout<<"\n";
-	// }
-	// cout<<"\n";
-	// for(int i = 0; i < n; ++i) {
-	// 	for(int j = 0; j < m; ++j) {
-	// 		cout<<visited[i][j]<<" ";
-	// 	}
-	// 	cout<<"\n";
-	// }
 
 
 	if(visited[e.x][e.y]) {
