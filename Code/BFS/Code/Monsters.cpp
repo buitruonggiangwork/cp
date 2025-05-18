@@ -5,14 +5,13 @@ struct Point {
 	int x, y;
 };
 
-
 Point monsterPoses[1000000];
 Point st, out;
 char matrix[1000][1000];
 int dangerAt[1000][1000];
 int dis[1000][1000];
 bool visited[1000][1000];
-int n, m, nMonters;
+int n, m, nMonsters;
 
 int dx[] = {1, 0, -1, 0};
 int dy[] = {0, -1, 0, 1};
@@ -28,7 +27,7 @@ void debug() {
 
 void input() {
 	cin>>n>>m;
-	nMonters = 0;
+	nMonsters = 0;
 	out.x = out.y = -1;
 	for(int i = 0; i < n; ++i) {
 		for(int j = 0; j < m; ++j) {
@@ -38,9 +37,9 @@ void input() {
 				st.y = j;
 			}
 			if(matrix[i][j] == 'M') {
-				monsterPoses[nMonters].x = i;
-				monsterPoses[nMonters].y = j;
-				nMonters++;
+				monsterPoses[nMonsters].x = i;
+				monsterPoses[nMonsters].y = j;
+				nMonsters++;
 			}
 		}
 	}
@@ -55,7 +54,7 @@ void bfs_monster() {
 	}
 
 	queue<Point> q;
-	for(int i = 0; i < nMonters; ++i) {
+	for(int i = 0; i < nMonsters; ++i) {
 		visited[monsterPoses[i].x][monsterPoses[i].y] = true;
 		dangerAt[monsterPoses[i].x][monsterPoses[i].y] = 0;
 		q.push(monsterPoses[i]);
